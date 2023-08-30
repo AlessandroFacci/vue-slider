@@ -32,6 +32,12 @@ createApp({
       ],
     };
   },
+  methods: {
+    goNext() {
+      this.slides[0].image++;
+    },
+    goPrev() {},
+  },
 }).mount("#app");
 
 // const slides = [
