@@ -48,6 +48,23 @@ createApp({
         this.activeItem = this.slides.length - 1;
       }
     },
+    goTo(index) {
+      this.activeItem = index;
+    },
+    setAutoplay() {
+      if (!this.autoplay) {
+        this.autoplay = setInterval(this.goNext, 3000);
+      }
+    },
+    stopAutoplay() {
+      if (this.autoplay) {
+        this.autoplay = false;
+      }
+    },
+  },
+  created() {
+    this.setAutoplay();
+    this.stopAutoplay();
   },
 }).mount("#app");
 
